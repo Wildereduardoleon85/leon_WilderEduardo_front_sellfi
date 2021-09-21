@@ -2,7 +2,7 @@ import { Box, AppBar, Toolbar, IconButton } from '@material-ui/core'
 import { headerStyles } from './headerMUI'
 import  SearchInput  from '../SearchInput/SearchInput'
 
-const Header = () => {
+const Header: React.FC = () => {
     const classes = headerStyles()
     const {grow, imageContainer, imageIcon} = classes
 

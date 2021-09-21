@@ -1,7 +1,7 @@
 import { StyledInputBase, Search, SearchIconWrapper } from './SearchInputMUI'
 
 
-const SearchInput = () => {
+const SearchInput: React.FC = () => {
 
     return (
         <Search style={{marginLeft: 'auto'}}>
