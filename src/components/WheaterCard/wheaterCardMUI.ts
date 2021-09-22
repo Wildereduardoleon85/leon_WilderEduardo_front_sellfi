@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/styles';
 
-export const wheaterInfoStyles = makeStyles({
+export const wheaterCardStyles = makeStyles({
     card: {
         width: '300px',
         backgroundColor: 'rgba(255, 255, 255, 0.5) !important'

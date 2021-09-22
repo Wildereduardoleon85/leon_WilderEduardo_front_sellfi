@@ -1,18 +1,21 @@
 import { 
     Box
 } from '@material-ui/core'
-import WheaterInfo from '../WheaterInfo/WheaterInfo'
+import WheaterCard from '../WheaterCard/WheaterCard'
 import { heroStyles } from './heroMUI'
-import { useFetchData } from '../../hooks/useFetchData'
+import { WheaterInfo } from '../../interfaces/interfaces'
 
+interface props {
+    wheaterInfo: WheaterInfo
+}
 
-const Hero: React.FC = () => {
+const Hero = ({wheaterInfo}: props) => {
     const classes = heroStyles()
     const { backdrop } = classes
 
     return (
         <Box className={backdrop}>
-            <WheaterInfo/>
+            <WheaterCard wheaterInfo={wheaterInfo} />
         </Box>
     )
 }

@@ -2,7 +2,11 @@ import { Box, AppBar, Toolbar, IconButton } from '@material-ui/core'
 import { headerStyles } from './headerMUI'
 import  SearchInput  from '../SearchInput/SearchInput'
 
-const Header: React.FC = () => {
+interface Props {
+    toggleDrawer: any
+}
+
+const Header: React.FC<Props> = ({toggleDrawer}) => {
     const classes = headerStyles()
     const {grow, imageContainer, imageIcon} = classes
 
@@ -14,8 +18,8 @@ const Header: React.FC = () => {
                         size="large"
                         edge="start"
                         color="inherit"
-                        aria-label="open drawer"
                         sx={{ mr: 2 }}
+                        onClick={toggleDrawer(true)}
                     >
                         <i className="fas fa-bars"/>
                     </IconButton>

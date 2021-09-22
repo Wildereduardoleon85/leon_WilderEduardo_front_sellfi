@@ -1,9 +1,16 @@
 import { Card, CardContent, Box, TextField, Typography } from '@material-ui/core'
-import { wheaterInfoStyles } from './wheaterInfoMUI'
+import { WheaterInfo } from '../../interfaces/interfaces'
+import { wheaterCardStyles } from './wheaterCardMUI'
 
-const WheaterInfo: React.FC = () => {
-    const classes = wheaterInfoStyles()
+interface props {
+    wheaterInfo: WheaterInfo
+}
+
+const WheaterCard = ({wheaterInfo}: props) => {
+    const classes = wheaterCardStyles()
     const { card, cardContent, inputGroup, imageContainer, container } = classes
+    const { ciudad, estado, loading, temperatura, humedad } = wheaterInfo
+
     return (
         <Card className={card}>
             <CardContent className={cardContent}>
@@ -12,14 +19,14 @@ const WheaterInfo: React.FC = () => {
                     <TextField id="input-with-sx" label="Buscar por Ciudad" variant="standard" />
                 </Box>
                 <Typography variant="h5">   
-                    Santiago
+                    {ciudad}
                 </Typography>
                 <Typography mt={1} variant="body2">
-                    Lunes, 13:00, Despejado
+                    {`Lunes, 13:00, ${estado}`}
                 </Typography>
                 <Box mt={1} className={container}>
                     <Typography variant="h2">
-                        26°C
+                        {temperatura + '°'}
                     </Typography>
                     <Box className={imageContainer}>
                         <img src="/img/day.svg" alt="" style={{width: '100%'}}/>
@@ -30,4 +37,4 @@ const WheaterInfo: React.FC = () => {
     )
 }
 
-export default WheaterInfo
+export default WheaterCard

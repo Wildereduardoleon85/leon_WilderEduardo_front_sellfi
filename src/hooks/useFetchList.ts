@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react'
-import { fetchData } from '../helpers/fetchData';
+import { fetchList } from '../helpers/fetchData';
+import { List } from '../interfaces/interfaces'
 
-export const useFetchData = () => {
+export const useFetchList = () => {
     
-    const [state, setState] = useState<{data: object[], loading: boolean}>({
+    const [state, setState] = useState<{data: List[], loading: boolean}>({
         data: [],
         loading: true
     });
 
     useEffect(() => {
-        fetchData()
-            .then( info => {
+        fetchList()
+            .then(info => {
                 setState({
                     data: info,
                     loading: false
