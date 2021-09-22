@@ -1,6 +1,5 @@
 import { Box, AppBar, Toolbar, IconButton } from '@material-ui/core'
 import { headerStyles } from './headerMUI'
-import  SearchInput  from '../SearchInput/SearchInput'
 
 interface Props {
     toggleDrawer: any
@@ -26,7 +25,6 @@ const Header: React.FC<Props> = ({toggleDrawer}) => {
                     <Box className={imageContainer}>
                         <img src="/img/icon.png" alt="wheater icon" className={imageIcon}/>
                     </Box>
-                    <SearchInput/>
                 </Toolbar>
             </AppBar>
         </Box>

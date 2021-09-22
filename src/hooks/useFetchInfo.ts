@@ -1,8 +1,5 @@
 import { useState, useEffect } from 'react'
-import { fetchList } from '../helpers/fetchData';
-import { List } from '../interfaces/interfaces'
 import axios from 'axios'
-
 
 export const useFetchInfo = () => {
     

@@ -8,13 +8,11 @@ export const wheaterCardStyles = makeStyles({
     cardContent: {
         height: '100%'
     },
-    inputGroup: {
-        display: 'flex',
-        alignItems: 'flex-end',
-        marginBottom: '20px'
-    },
     imageContainer: {
         width: '90px'
+    },
+    imageContainer2: {
+        width: '60px'
     },
     container: {
         display: 'flex',
