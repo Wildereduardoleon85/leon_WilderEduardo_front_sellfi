@@ -9,7 +9,8 @@ export const wheaterCardStyles = makeStyles({
         height: '100%'
     },
     imageContainer: {
-        width: '90px'
+        width: '150px',
+        margin: 'auto',
     },
     imageContainer2: {
         width: '60px'

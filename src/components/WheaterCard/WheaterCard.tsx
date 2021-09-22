@@ -23,8 +23,8 @@ const WheaterCard = ({wheaterInfo}: props) => {
 
     const [tempSwitch, setTempSwitch] = useState<boolean>(true)
 
-    const farenheit = (temperatura * 1.8) + 32
-
+    const farenheit = ((temperatura * 1.8) + 32).toFixed(1)
+    
     return (
         <Card className={card}>
             <CardContent className={cardContent}>
@@ -34,14 +34,14 @@ const WheaterCard = ({wheaterInfo}: props) => {
                 <Typography mt={1} variant="body2" align='center'>
                     {`Lunes, 13:00, ${estado}`}
                 </Typography>
-                <Box mt={1} className={container}>
-                    <Typography variant="h3" align='center'>
-                        {`${tempSwitch ? temperatura : farenheit}°`}
-                    </Typography>
-                    <Box className={imageContainer}>
-                        <img src="/img/day.svg" alt="" style={{width: '100%'}}/>
-                    </Box>
+                
+                <Typography mt={1} variant="h2" align='center'>
+                    {tempSwitch ? temperatura+' °C' : farenheit+' °F'}
+                </Typography>
+                <Box className={imageContainer}>
+                    <img src="/img/cloudy.svg" alt="" style={{width: '100%'}}/>
                 </Box>
+                
                 <Box mt={1} className={container}>
                     <FormGroup>
                         <FormControlLabel 

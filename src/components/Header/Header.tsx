@@ -1,4 +1,4 @@
-import { Box, AppBar, Toolbar, IconButton } from '@material-ui/core'
+import { Box, AppBar, Toolbar, IconButton, Typography } from '@material-ui/core'
 import { headerStyles } from './headerMUI'
 
 interface Props {
@@ -22,9 +22,12 @@ const Header: React.FC<Props> = ({toggleDrawer}) => {
                     >
                         <i className="fas fa-bars"/>
                     </IconButton>
-                    <Box className={imageContainer}>
+                    <Box mr={2} className={imageContainer}>
                         <img src="/img/icon.png" alt="wheater icon" className={imageIcon}/>
                     </Box>
+                    <Typography variant='h5'>
+                        My Wheater App
+                    </Typography>
                 </Toolbar>
             </AppBar>
         </Box>
