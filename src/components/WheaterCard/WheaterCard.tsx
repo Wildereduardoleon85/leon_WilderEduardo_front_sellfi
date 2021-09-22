@@ -10,6 +10,7 @@ import {
 import { WheaterInfo } from '../../interfaces/interfaces'
 import { wheaterCardStyles } from './wheaterCardMUI'
 import CustomSwitch from '../CustomSwitch/CustomSwitch'
+import { useState } from 'react'
 
 interface props {
     wheaterInfo: WheaterInfo
@@ -19,6 +20,10 @@ const WheaterCard = ({wheaterInfo}: props) => {
     const classes = wheaterCardStyles()
     const { card, cardContent, imageContainer, container, imageContainer2 } = classes
     const { ciudad, estado, loading, temperatura, humedad } = wheaterInfo
+
+    const [tempSwitch, setTempSwitch] = useState<boolean>(true)
+
+    const farenheit = (temperatura * 1.8) + 32
 
     return (
         <Card className={card}>
@@ -30,8 +35,8 @@ const WheaterCard = ({wheaterInfo}: props) => {
                     {`Lunes, 13:00, ${estado}`}
                 </Typography>
                 <Box mt={1} className={container}>
-                    <Typography variant="h2" align='center'>
-                        {temperatura + '°'}
+                    <Typography variant="h3" align='center'>
+                        {`${tempSwitch ? temperatura : farenheit}°`}
                     </Typography>
                     <Box className={imageContainer}>
                         <img src="/img/day.svg" alt="" style={{width: '100%'}}/>
@@ -40,8 +45,12 @@ const WheaterCard = ({wheaterInfo}: props) => {
                 <Box mt={1} className={container}>
                     <FormGroup>
                         <FormControlLabel 
-                            control={<CustomSwitch sx={{ m: 1 }} defaultChecked />}
-                            label="Custom Switch" 
+                            control={<CustomSwitch 
+                                        sx={{ m: 1 }} 
+                                        checked={tempSwitch} 
+                                        onChange={() =>setTempSwitch(!tempSwitch)}
+                                        />}
+                            label={tempSwitch ? 'Cambiar a Farenheit' : 'Cambiar a Celsius'}
                         />
                     </FormGroup>
                 </Box>

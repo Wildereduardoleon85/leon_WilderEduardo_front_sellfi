@@ -23,7 +23,7 @@ const Header: React.FC<Props> = ({toggleDrawer}) => {
                         <i className="fas fa-bars"/>
                     </IconButton>
                     <Box className={imageContainer}>
-                        <img src="/img/farenheit.png" alt="wheater icon" className={imageIcon}/>
+                        <img src="/img/icon.png" alt="wheater icon" className={imageIcon}/>
                     </Box>
                 </Toolbar>
             </AppBar>
