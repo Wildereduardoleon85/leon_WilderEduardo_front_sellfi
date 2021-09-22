@@ -1,18 +1,24 @@
 import { Box, AppBar, Toolbar, IconButton, Typography } from '@material-ui/core'
 import { headerStyles } from './headerMUI'
+import { getBackground, getDayString, getTime } from '../../helpers/getDates'
+import { WheaterInfo } from '../../interfaces/interfaces'
 
 interface Props {
-    toggleDrawer: any
+    toggleDrawer: any,
+    date: Date,
+    wheaterInfo: WheaterInfo,
 }
 
-const Header: React.FC<Props> = ({toggleDrawer}) => {
+const Header: React.FC<Props> = ({toggleDrawer, date, wheaterInfo}) => {
     const classes = headerStyles()
-    const {grow, imageContainer, imageIcon} = classes
+    const {grow, imageContainer, imageIcon, mobile} = classes
+    const { estado } = wheaterInfo
 
     return (
         <Box className={grow}>
-            <AppBar position="static">
-                <Toolbar>
+            <AppBar position="static" style={{backgroundColor: 'transparent'}}>
+                <Toolbar 
+                    style={{backgroundColor: getBackground(date).color}}>
                     <IconButton
                         size="large"
                         edge="start"
@@ -25,8 +31,11 @@ const Header: React.FC<Props> = ({toggleDrawer}) => {
                     <Box mr={2} className={imageContainer}>
                         <img src="/img/icon.png" alt="wheater icon" className={imageIcon}/>
                     </Box>
-                    <Typography variant='h5'>
+                    <Typography className={mobile} variant='h5' sx={{ flexGrow: 1 }}>
                         My Wheater App
+                    </Typography>
+                    <Typography mt={1} variant="body2" className={mobile}>
+                        {`${getDayString(date)}, ${getTime(date)} ${estado}`}
                     </Typography>
                 </Toolbar>
             </AppBar>

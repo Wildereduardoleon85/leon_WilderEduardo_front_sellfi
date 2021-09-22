@@ -10,3 +10,8 @@ export interface List {
     codigo: string,
     ciudad: string
 }
+
+export interface BgFunction {
+    bg: string,
+    color: string
+}

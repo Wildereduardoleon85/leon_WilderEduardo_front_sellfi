@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import Header from '../Header/Header'
 import SideBar from '../SideBar/SideBar'
+import { WheaterInfo } from '../../interfaces/interfaces'
 
 interface props {
-    getWheaterInfo:  (e: string) => void
+    getWheaterInfo:  (e: string) => void,
+    date: Date,
+    wheaterInfo: WheaterInfo,
 }
 
-const Navbar = ({getWheaterInfo}: props) => {
+const Navbar = ({getWheaterInfo, date, wheaterInfo}: props) => {
+
     const [show, setShow] = useState<boolean>(false);
 
     const toggleDrawer = (open: boolean) => (
@@ -24,7 +28,11 @@ const Navbar = ({getWheaterInfo}: props) => {
 
     return (
         <>
-            <Header toggleDrawer={toggleDrawer}/>
+            <Header 
+                toggleDrawer={toggleDrawer} 
+                date={date}
+                wheaterInfo={wheaterInfo}
+            />
             <SideBar 
                 show={show} 
                 toggleDrawer={toggleDrawer}

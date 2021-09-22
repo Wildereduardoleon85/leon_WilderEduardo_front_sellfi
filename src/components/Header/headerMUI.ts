@@ -11,5 +11,10 @@ export const headerStyles = makeStyles({
     },
     imageIcon: {
         width: '100%'
+    },
+    mobile: {
+      '@media (max-width: 520px)': {
+        display: 'none',
+      }
     }
   });

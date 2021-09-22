@@ -7,6 +7,11 @@ import './App.css'
 
 const App = () => {
 
+  // const date = new Date(Date.now())
+
+  // Set Time for testing porpouse
+   const date = new Date('December 25, 1995 21:15:30')
+
   const [wheaterInfo, setWheaterInfo] = useState<WheaterInfo>({
     temperatura: 0,
     humedad: 0,
@@ -35,15 +40,19 @@ const App = () => {
         })
       })
   }
-
+  
   return (
     <>
       <header>
-        <Navbar getWheaterInfo={getWheaterInfo}/>
+        <Navbar 
+          wheaterInfo={wheaterInfo} 
+          getWheaterInfo={getWheaterInfo} 
+          date={date}
+        />
       </header>
       <main>
         <section>
-          <Hero wheaterInfo={wheaterInfo}/>
+          <Hero wheaterInfo={wheaterInfo} date={date}/>
         </section>
       </main>
     </>

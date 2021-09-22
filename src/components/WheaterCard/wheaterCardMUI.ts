@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/styles';
 export const wheaterCardStyles = makeStyles({
     card: {
         width: '300px',
+        height: '456px',
         backgroundColor: 'rgba(255, 255, 255, 0.5) !important'
     },
     cardContent: {

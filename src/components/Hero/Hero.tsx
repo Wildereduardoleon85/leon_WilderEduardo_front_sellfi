@@ -4,18 +4,20 @@ import {
 import WheaterCard from '../WheaterCard/WheaterCard'
 import { heroStyles } from './heroMUI'
 import { WheaterInfo } from '../../interfaces/interfaces'
+import { getBackground } from '../../helpers/getDates'
 
 interface props {
-    wheaterInfo: WheaterInfo
+    wheaterInfo: WheaterInfo,
+    date: Date
 }
 
-const Hero = ({wheaterInfo}: props) => {
+const Hero = ({wheaterInfo, date}: props) => {
     const classes = heroStyles()
     const { backdrop } = classes
 
     return (
-        <Box className={backdrop}>
-            <WheaterCard wheaterInfo={wheaterInfo} />
+        <Box className={backdrop} style={{backgroundImage: `url(${getBackground(date).bg})`}}>
+            <WheaterCard wheaterInfo={wheaterInfo} date={date}/>
         </Box>
     )
 }

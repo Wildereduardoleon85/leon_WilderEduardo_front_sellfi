@@ -1,7 +1,6 @@
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import { ListItem, ListItemText, Box } from '@material-ui/core';
-import { sideBarStyles } from './sideBarMUI'
 import { useFetchList } from '../../hooks/useFetchList'
 
 interface props {
@@ -12,9 +11,7 @@ interface props {
 
 export default function SideBar({show, toggleDrawer, getWheaterInfo}: props) {
 
-  const classes = sideBarStyles();
-
-  const { data, loading } = useFetchList()
+  const { data } = useFetchList()
 
   return (
       <Drawer
