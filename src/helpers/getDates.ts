@@ -28,6 +28,10 @@ export const getTime = (date: Date): string | undefined => {
     const hours = date.getHours()
     const minutes = date.getMinutes()
 
+    if(minutes < 10){
+      return `${String(hours)}:0${String(minutes)}`
+    }
+
     return `${String(hours)}:${String(minutes)}`
 }
 
