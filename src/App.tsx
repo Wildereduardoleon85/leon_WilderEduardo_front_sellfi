@@ -3,7 +3,6 @@ import Hero from './components/Hero/Hero'
 import { useState, useEffect } from 'react'
 import { WheaterInfo } from './interfaces/interfaces'
 import { getDefaultCity, getInfo } from './helpers/fetchData'
-import { useFetchList } from './hooks/useFetchList'
 import './App.css'
 
 const App = () => {
