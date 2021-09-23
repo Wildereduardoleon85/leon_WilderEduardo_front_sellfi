@@ -16,7 +16,7 @@ const Header: React.FC<Props> = ({toggleDrawer, date, wheaterInfo}) => {
 
     return (
         <Box className={grow}>
-            <AppBar position="static" style={{backgroundColor: 'transparent'}}>
+            <AppBar position="static" >
                 <Toolbar 
                     style={{backgroundColor: getBackground(date).color}}>
                     <IconButton
