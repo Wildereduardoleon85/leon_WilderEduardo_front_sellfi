@@ -9,3 +9,6 @@ Aplicación que muestra información del clima en las diferentes estaciones de C
 4.	Se requiere el repositorio del backend para que la aplicación funcione ya que está conectada a una base de datos.
 4.1	Para iniciar el servidor del backend, se debe clonar el repositorio del backned, en el siguiente link se puede acceder a el: https://github.com/Wildereduardoleon85/leon_WilderEduardo_back_sellfi siguiendo los mismos pasos descritos anteriormente (1, 2, 3)
 4.2	Una vez que el servidor esté corriendo la aplicación mostrará la información correctamente
+
+Aplicación en vivo desplegada en heroku:
+https://mywheaterappchl.herokuapp.com/
