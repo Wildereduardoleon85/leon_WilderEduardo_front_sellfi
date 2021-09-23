@@ -7,10 +7,10 @@ import './App.css'
 
 const App = () => {
 
-   const date = new Date(Date.now())
+  const date = new Date(Date.now())
 
   // Set Time for testing porpouse
-  // const date = new Date('December 25, 1995 05:15:30')
+  // const date = new Date('December 25, 1995 18:15:30')
 
   const [wheaterInfo, setWheaterInfo] = useState<WheaterInfo>({
     temperatura: 0,
