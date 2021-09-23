@@ -15,6 +15,8 @@ const Hero = ({wheaterInfo, date}: props) => {
     const classes = heroStyles()
     const { backdrop } = classes
 
+    console.log(getBackground(date).bg)
+
     return (
         <Box className={backdrop} style={{backgroundImage: `url(${getBackground(date).bg})`}}>
             <WheaterCard wheaterInfo={wheaterInfo} date={date}/>

@@ -46,7 +46,7 @@ const WheaterCard = ({wheaterInfo, date}: props) => {
                             {tempSwitch ? temperatura+' °C' : farenheit+' °F'}
                         </Typography>
                         <Box className={imageContainer}>
-                            <img src={getIcons(estado)} alt={estado} style={{width: '100%'}}/>
+                            <img src={getIcons(estado, date)} alt={estado} style={{width: '100%'}}/>
                         </Box>
                         
                         <Box className={container}>
